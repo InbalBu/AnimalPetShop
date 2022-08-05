@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zLzwF+f0G73CkMk/iMo7fTC8nbS9fzwphmgy+vAwC7c=",
+  "Hash": "riTkoyO0TWjr4EZUiclm2pT2CLkwdf1ijtdxHQ4CaHE=",
   "Source": "AnimalShopProject",
   "BasePath": "_content/AnimalShopProject",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\inbal\\source\\repos\\AnimalShopProject\\AnimalShopProject\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AnimalShopProject.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\inbal\\source\\repos\\AnimalShopProject\\AnimalShopProject\\wwwroot\\css\\catalog.css",
+      "SourceId": "AnimalShopProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\inbal\\source\\repos\\AnimalShopProject\\AnimalShopProject\\wwwroot\\",
+      "BasePath": "_content/AnimalShopProject",
+      "RelativePath": "css/catalog.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\catalog.css"
     },
     {
       "Identity": "C:\\Users\\inbal\\source\\repos\\AnimalShopProject\\AnimalShopProject\\wwwroot\\css\\homepage.css",

@@ -19,10 +19,9 @@ namespace AnimalShopProject.Controllers
 
         public IActionResult Index()
         {
-            return View(_repository.GetAnimal().Animals!.Include(c => c.Comments!));
+            return View(_repository.GetTopAnimals());
                 
         }
-
 
     }
 }

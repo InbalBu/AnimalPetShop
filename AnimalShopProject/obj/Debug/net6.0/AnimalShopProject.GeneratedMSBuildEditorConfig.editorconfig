@@ -15,8 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\inbal\source\repos\AnimalShopProject\AnimalShopProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Admin/CreateAnimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQW5pbWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Admin/EditAnimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEFuaW1hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Catalog/AnimalCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xBbmltYWxDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Catalog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/inbal/source/repos/AnimalShopProject/AnimalShopProject/Views/Home/Index.cshtml]

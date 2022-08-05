@@ -16,27 +16,35 @@ namespace AnimalShopProject.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_repository.GetAnimal().Animals);
         }
 
-        public IActionResult Create()
+        public IActionResult CreateForm()
         {
-            Animal animal = new Animal { Id = 4, Name = "Labrador", Age = 6, PictureName = "sdsa", Description = "dsad", CategoryID = 2 };
-            _repository.InsertAnimal(animal);
-            return Content("Animal was Added");
+            return View("CreateAnimal");
         }
-        public IActionResult Edit()
+
+        public IActionResult Create(string name, int age, string description, string pictureName)
         {
-            Animal animal = new Animal { Id = 3, Name = "Labrador", Age = 8, PictureName = "sdsa", Description = "dsad", CategoryID = 2 };
-            _repository.UpdateAnimal(2, animal);
-            return Content("Anima was edited");
+            _repository.InsertAnimal(name, age, description, pictureName);
+            return View("Index", _repository.GetAnimal().Animals);
+        }
+        public IActionResult Edit(int id)
+        {
+            var animal = _repository.ShowAnimalById(id);
+            return View("EditAnimal", animal);
+        }
+
+        public IActionResult Update(int id, Animal animal)
+        {
+            _repository.UpdateAnimal(id, animal);
+            return View("Index", _repository.GetAnimal().Animals);
         }
 
         public IActionResult Delete(int id)
         {
             _repository.DeleteAnimal(id);
-            return Content("Anima was Deleted");
-
+            return View("Index", _repository.GetAnimal().Animals);
         }
     }
 }

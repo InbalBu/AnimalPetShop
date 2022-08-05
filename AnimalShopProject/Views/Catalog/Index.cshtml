@@ -8,13 +8,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/css/niv.css" rel="stylesheet" type="text/css">
+    <link href="~/css/catalog.css" rel="stylesheet" type="text/css" asp-append-version="true">
 
 </head>
 <body>
-     <h1>The Best Pet Shop In Town!</h1>
-
-          <a asp-action="CreateForm" asp-controller="Admin">Create</a>
+    <h1>The Best Pet Shop In Town!</h1>
 
             <form action="/Catalog/Index" method="post">
 
@@ -37,14 +35,11 @@
 
     @foreach (var animal in Model)
     {
-        <div>Name: @animal.Name Description: @animal.Description </div>
+        <div>Name: @animal.Name </div>
         <img class="images" src="@animal.PictureName"/>
 
-        <a asp-action="Edit" asp-route-id="@animal.Id" asp-controller="Admin">Edit</a>
-        <a asp-action="Delete" asp-route-id="@animal.Id" asp-controller="Admin">Delete</a>
+        <a asp-action="AnimalCard" asp-route-animalId="@animal.Id" asp-controller="catalog">View More or leave a comment</a>
     }
-
-
  
     
 </body>

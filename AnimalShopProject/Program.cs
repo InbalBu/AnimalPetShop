@@ -20,7 +20,7 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}");
+    endpoints.MapControllerRoute("Default", "{controller=Admin}/{action=Index}");
 
 });
 

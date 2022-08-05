@@ -9,7 +9,7 @@
         public string? Description { get; set; }
         public int CategoryID { get; set; }
         public Category? Category { get; set; }
-        public IEnumerable<Comment>? Comments { get; set; }
+        public ICollection<Comment>? Comments { get; set; }
 
     }
 }

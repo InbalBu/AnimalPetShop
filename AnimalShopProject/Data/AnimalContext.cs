@@ -28,7 +28,7 @@ namespace AnimalShopProject.Data
             );
 
             modelBuilder.Entity<Category>().HasData(
-                new { Id = 1, Name = "Bird" },
+                new { Id = 1, Name = "Birds" },
                 new { Id = 2, Name = "Dogs" },
                 new { Id = 3, Name = "Cats" }
             );
@@ -39,10 +39,12 @@ namespace AnimalShopProject.Data
                new { Id = 4, AnimalId = 2, Text = "Looks like such a nice and good dog" },
                new { Id = 5, AnimalId = 2, Text = "Looks like such a nice and good dog" },
                new { Id = 6, AnimalId = 2, Text = "They’re an active and playful breed" },
-               new { Id = 7, AnimalId = 3, Text = "They’re an active and playful breed" },
+               new { Id = 7, AnimalId = 2, Text = "They’re an active and playful breed" },
                new { Id = 8, AnimalId = 3, Text = "They’re an active and playful breed" },
                new { Id = 9, AnimalId = 3, Text = "They’re an active and playful breed" },
-               new { Id = 10, AnimalId = 3, Text = "They’re an active and playful breed" }
+               new { Id = 10, AnimalId = 3, Text = "They’re an active and playful breed" },
+               new { Id = 11, AnimalId = 3, Text = "They’re an active and playful breed" },
+               new { Id = 12, AnimalId = 3, Text = "They’re an active and playful breed" }
                 );
 
         }

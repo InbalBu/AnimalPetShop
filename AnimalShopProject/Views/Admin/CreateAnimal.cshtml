@@ -1,0 +1,30 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model AnimalShopProject.Models.Animal
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/niv.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+        <h1>The Best Pet Shop in Town!</h1>
+         @using(Html.BeginForm("Create", "Admin", FormMethod.Post))
+    {
+         @Html.TextBox("name")
+         @Html.TextBox("age")
+         @Html.TextBox("description")
+         @Html.TextBox("pictureName")
+       
+
+        <input type="submit" value="Add Animal"/>
+    }
+    
+</body>
+</html>
+
+

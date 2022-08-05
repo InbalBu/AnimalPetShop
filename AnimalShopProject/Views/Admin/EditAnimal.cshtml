@@ -1,0 +1,30 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model AnimalShopProject.Models.Animal
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/niv.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+        <h1>The Best Pet Shop in Town!</h1>
+         @using(Html.BeginForm("Update", "Admin", new {id=Model.Id}, FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Age)
+        @Html.TextBoxFor(model => model.Description)
+        @Html.TextBoxFor(model => model.PictureName)
+        @Html.TextBoxFor(model => model.Category)
+
+        <input type="submit" value="Edit Animal"/>
+    }
+    
+</body>
+</html>
+
+

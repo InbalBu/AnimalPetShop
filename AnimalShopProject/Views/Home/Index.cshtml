@@ -15,9 +15,15 @@
     <h1>The Best Pet Shop In Town!</h1>
     @foreach (var animal in Model)
     {
-        <img class="images" src=" @animal.PictureName"/>
+        <div class="row">
+            <div class="column">
+                <img class="images" src=" @animal.PictureName"/>
+            </div>
+        </div>
+        
         <div>Name: @animal.Name Description: @animal.Description Number of Comments: @animal.Comments!.Count()</div>
     }
+ 
     
 </body>
 </html>
