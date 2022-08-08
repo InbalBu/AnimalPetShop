@@ -12,18 +12,28 @@
 
 </head>
 <body>
-    <h1>The Best Pet Shop In Town!</h1>
+    <h1 class="header">The Best Pet Shop In Town!</h1>
+    <p class="p">Our most commented pets:</p>
+
     @foreach (var animal in Model)
     {
-        <div class="row">
-            <div class="column">
-                <img class="images" src=" @animal.PictureName"/>
-            </div>
-        </div>
-        
-        <div>Name: @animal.Name Description: @animal.Description Number of Comments: @animal.Comments!.Count()</div>
+         <table class="table table-bordered table-responsive">
+      <tr>
+        <th>Portrait</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Number of comments</th>
+      </tr>
+      <tr>
+        <td> <img class="images" src=" @animal.PictureName"/></td>
+        <td>@animal.Name</td>
+        <td>@animal.Description</td>
+        <td>@animal.Comments!.Count()</td>
+      </tr>
+
+    </table> 
     }
- 
+
     
 </body>
 </html>

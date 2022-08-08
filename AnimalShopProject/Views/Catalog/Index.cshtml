@@ -8,15 +8,18 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/css/catalog.css" rel="stylesheet" type="text/css" asp-append-version="true">
+    <link href="~/css/homepage.css" rel="stylesheet" type="text/css" asp-append-version="true">
 
 </head>
 <body>
-    <h1>The Best Pet Shop In Town!</h1>
+    <h1 class="header">The Best Pet Shop In Town!</h1>
+    <p class="p">Please select a category:</p>
 
             <form action="/Catalog/Index" method="post">
 
             <fieldset>Category <select id="Category" name="Category">
+
+            <option value="">All categories</option>
 
             <option value="Birds">Birds</option>
 
@@ -35,11 +38,22 @@
 
     @foreach (var animal in Model)
     {
-        <div>Name: @animal.Name </div>
-        <img class="images" src="@animal.PictureName"/>
+      <table class="table table-bordered table-responsive">
+      <tr>
+        <th>Portrait</th>
+        <th>Name</th>
+        <th>View more and comment</th>
+      </tr>
+      <tr>
+        <td> <img class="images" src=" @animal.PictureName"/></td>
+        <td>@animal.Name</td>
+         <td><a class="btn btn-outline-success active" role="button" asp-action="AnimalCard" asp-route-animalId="@animal.Id" asp-controller="catalog">Details</a></td>
+      </tr>
 
-        <a asp-action="AnimalCard" asp-route-animalId="@animal.Id" asp-controller="catalog">View More or leave a comment</a>
+    </table> 
+
     }
+
  
     
 </body>

@@ -8,20 +8,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/css/niv.css" rel="stylesheet" type="text/css">
+    <link href="~/css/homepage.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-        <h1>The Best Pet Shop in Town!</h1>
+        <h1 class="header">The Best Pet Shop in Town!</h1>
+        <p class="p">To Edit This Animal Please Fill The Next Form:</p>
+
          @using(Html.BeginForm("Update", "Admin", new {id=Model.Id}, FormMethod.Post))
     {
-        @Html.TextBoxFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Age)
-        @Html.TextBoxFor(model => model.Description)
-        @Html.TextBoxFor(model => model.PictureName)
-        @Html.TextBoxFor(model => model.Category)
+        <label>Name:</label> @Html.TextBoxFor(model => model.Name, new { Class="inputEdit" }) <br/>
+        <label>Age:</label> @Html.TextBoxFor(model => model.Age,  new { Class="inputEdit" })<br/>
+        <label>Description:</label>  @Html.TextBoxFor(model => model.Description,  new { Class="inputEdit" })<br/>
+        <label>Picture:</label> @Html.TextBoxFor(model => model.PictureName,  new { Class="inputEdit" })<br/>
+        <label>Category:</label> @Html.TextBoxFor(model => model.Category,  new { Class="inputEdit" }) <br/>
 
-        <input type="submit" value="Edit Animal"/>
+        <input class="btn btn-outline-success active" role="button" type="submit" value="Edit Animal"/>
     }
     
 </body>

@@ -12,37 +12,44 @@
 
 </head>
 <body>
-    <h1>The Best Pet Shop In Town!</h1>
+    <h1 class="header">The Best Pet Shop In Town!</h1>
+    <p class="p">You are watching at @Model.Name</p>
 
-        <div class="row">
-            <div class="column">
-                <img class="images" @Html.DisplayNameFor(c => c.PictureName): src=" @Model.PictureName"/>
-            </div>
-        </div>
-        
-        <div> @Html.DisplayNameFor(c => c.Name): @Model.Name
-            @Html.DisplayNameFor(c => c.Age): Age: @Model.Age 
-            @Html.DisplayNameFor(c => c.Description): Description: @Model.Description 
-          </div>
-
-         All Comments:
-        @foreach (var comment in Model.Comments!)
+     <table style="table-layout:unset;" class="table table-bordered table-responsive">
+      <tr>
+        <th>Portrait</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Age</th>
+        <th>Category Name</th>
+        <th>All Comments</th>
+        <th>Add Comment</th>
+      </tr>
+      <tr>
+        <td> <img class="images" src=" @Model.PictureName"/></td>
+        <td>@Model.Name</td>
+        <td>@Model.Description </td>
+        <td>@Model.Age</td>
+        <td>@Model.Category</td>
+        <td> @foreach (var comment in Model.Comments!)
         {
             <div>
                  @comment.Text
             </div>
         }
+        </td>
+        <td>
+             @using(Html.BeginForm("AddComment", "Catalog", new {animalId=Model.Id}, FormMethod.Post))
+           {
+            @Html.TextBox("comment", null, new {animalId=Model.Id})
 
-        Add comment: 
-    @using(Html.BeginForm("AddComment", "Catalog", new {animalId=Model.Id}, FormMethod.Post))
-    {
-        @Html.TextBox("comment", null, new {animalId=Model.Id})
+             <input type="submit" value="Add Comment"/>
+             }
+        </td>
+      </tr>
 
-        <input type="submit" value="Add Comment"/>
-    }
-
-     <a asp-action="Index"  asp-controller="Catalog">Back</a>
-
+    </table> 
+   
     
 </body>
 </html>

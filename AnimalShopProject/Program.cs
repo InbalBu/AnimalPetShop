@@ -3,7 +3,7 @@ using AnimalShopProject.Data;
 using AnimalShopProject.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<AnimalContext>(options => options.UseSqlite("Data Source=c:\\temp\\animals.db"));
+builder.Services.AddDbContextFactory<AnimalContext>(options => options.UseSqlite("Data Source=c:\\temp\\animals.db"));
 builder.Services.AddTransient<IRepository, MyRepository>();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
@@ -20,7 +20,7 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllerRoute("Default", "{controller=Admin}/{action=Index}");
+    endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}");
 
 });
 

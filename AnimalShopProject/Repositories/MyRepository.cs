@@ -48,8 +48,9 @@ namespace AnimalShopProject.Repositories
 
         public void InsertAnimal(string name, int age, string description, string pictureName)
         {
-             var animalList = GetAnimal().Animals!.ToList();
-            _context.Animals!.Add(new Animal { Id = animalList.Count+1, CategoryID = 1, Age = age, Name = name, Description = description, PictureName = pictureName});
+            var animalList = GetAnimal().Animals!.ToArray();
+            int id = animalList[animalList.Length-1].Id + 1;
+            _context.Add(new Animal { Id = id, CategoryID = 1, Age = age, Name = name, Description = description, PictureName = pictureName});
             _context.SaveChanges();
         }
 
@@ -67,7 +68,7 @@ namespace AnimalShopProject.Repositories
         public void DeleteAnimal(int id)
         {
             var animal = _context.Animals!.SingleOrDefault(m => m.Id == id);
-            _context.Animals!.Remove(animal!);
+            _context.Remove(animal!);
             _context.SaveChanges();
         }
     }
