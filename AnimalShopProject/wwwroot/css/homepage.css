@@ -55,4 +55,11 @@ label {
     margin: 15px;
 }
 
+.commentSection p {
+    flex-wrap:nowrap;
+    list-style:circle;
+}
 
+.CreateForm {
+    margin-bottom: 30px;
+}

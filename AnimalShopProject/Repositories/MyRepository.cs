@@ -30,38 +30,42 @@ namespace AnimalShopProject.Repositories
                 return _context.Animals!.ToList();
             } else
             {
-                return _context.Animals!.Include(c => c.Category).Where(c => c.Category!.Name == category).ToList();
+                return _context.Animals!.Include(c => c.Category).ThenInclude(c => c!.Animals!).ThenInclude(c => c.Comments!).Where(c => c.Category!.Name == category).ToList();
             }
         }
 
         public Animal ShowAnimalById(int animalId)
         {
-            return _context.Animals!.Include(c => c.Comments!).Single(c => c.Id! == animalId);
+            var categories = _context.Animals!.Include(c => c.Category).ThenInclude(c => c!.Animals!).ThenInclude(c => c.Comments!);
+            var animal = categories!.Single(m => m.Id == animalId);
+            return animal;
         }
 
         public Animal AddComment(int animalId, string comment)
         {
-             _context.Animals!.Include(c => c.Comments!).Single(c => c.Id! == animalId).Comments!.Add(new Comment { Text = comment });
+            _context.Animals!.Include(c => c.Category!).ThenInclude(c => c.Animals!).ThenInclude(c => c.Comments!).Single(c => c.Id! == animalId).Comments!.Add(new Comment { Text = comment });
             _context.SaveChanges();
             return _context.Animals!.Include(c => c.Comments!).Single(c => c.Id! == animalId);
         }
 
-        public void InsertAnimal(string name, int age, string description, string pictureName)
+        public void InsertAnimal(string name, int age, string description, string pictureName, int categoryID)
         {
             var animalList = GetAnimal().Animals!.ToArray();
             int id = animalList[animalList.Length-1].Id + 1;
-            _context.Add(new Animal { Id = id, CategoryID = 1, Age = age, Name = name, Description = description, PictureName = pictureName});
+            _context.Add(new Animal { Id = id, CategoryID = categoryID, Age = age, Name = name, Description = description, PictureName = pictureName});
             _context.SaveChanges();
         }
 
-        public void UpdateAnimal(int id, Animal animal)
+        public void UpdateAnimal(int id, Animal animal, int categoryID)
         {
             var animalInDb = _context.Animals!.SingleOrDefault(m => m.Id == id);
+            animalInDb!.CategoryID = categoryID;
             _context.Animals!.Update(animalInDb!);
             animalInDb!.Name = animal.Name;
             animalInDb.Age = animal.Age;
             animalInDb.PictureName = animal.PictureName;
             animalInDb.Description = animal.Description;
+            animalInDb.Category = animal.Category;
             _context.SaveChanges();
         }
 

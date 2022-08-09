@@ -17,13 +17,35 @@
 
          @using(Html.BeginForm("Update", "Admin", new {id=Model.Id}, FormMethod.Post))
     {
-        <label>Name:</label> @Html.TextBoxFor(model => model.Name, new { Class="inputEdit" }) <br/>
-        <label>Age:</label> @Html.TextBoxFor(model => model.Age,  new { Class="inputEdit" })<br/>
-        <label>Description:</label>  @Html.TextBoxFor(model => model.Description,  new { Class="inputEdit" })<br/>
-        <label>Picture:</label> @Html.TextBoxFor(model => model.PictureName,  new { Class="inputEdit" })<br/>
-        <label>Category:</label> @Html.TextBoxFor(model => model.Category,  new { Class="inputEdit" }) <br/>
+      
+        <label asp-for="Name"></label>
+       <input asp-for="@Model.Name" required placeholder="Animal Name" class="inputEdit"/> <br/>
+       <label asp-for="Age"></label>
+       <input asp-for="@Model.Age" required placeholder="Age" class="inputEdit"/> <br/>
+       <label asp-for="Description"></label>
+       <input asp-for="@Model.Description" required placeholder="Description" class="inputEdit" width="300"/> <br/>
+       <label asp-for="PictureName"></label>
+       <input asp-for="@Model.PictureName" required placeholder="Picture" class="inputEdit"/> <br/>
 
-        <input class="btn btn-outline-success active" role="button" type="submit" value="Edit Animal"/>
+         <form action="/Catalog/AnimalCard" method="post">
+
+            <fieldset>Category <select id="categoryID" name="categoryID">
+
+            <option value="">All categories</option>
+
+            <option value="1">Birds</option>
+
+            <option value="2">Dogs</option>
+
+            <option value="3">Cats</option>
+
+            </select>
+
+            </fieldset>
+
+            <input class="btn btn-outline-success active" role="button" type="submit" value="Edit Animal"/>
+            </form>
+
     }
     
 </body>

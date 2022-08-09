@@ -8,19 +8,42 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/css/homepage.css rel="stylesheet" type="text/css">
+    <link href="~/css/homepage.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-        <h1>The Best Pet Shop in Town!</h1>
+        <h1 class="header">The Best Pet Shop in Town!</h1>
+         <p class="p">To Add a New Animal Please Fill The Next Form:</p>
+
          @using(Html.BeginForm("Create", "Admin", FormMethod.Post))
     {
-         <text>Animal Name:</text>@Html.TextBox("name")
-         <text>Age:</text>@Html.TextBox("age")
-         <text>Description:</text>@Html.TextBox("description")
-         <text>Picture:</text>@Html.TextBox("pictureName"), new { type = "file" })
+       <label asp-for="Name"></label>
+       <input asp-for="@Model.Name" required placeholder="Animal Name" class="inputEdit"/> <br/>
+       <label asp-for="Age"></label>
+       <input asp-for="@Model.Age" required placeholder="Age" class="inputEdit"/> <br/>
+       <label asp-for="Description"></label>
+       <input asp-for="@Model.Description" required placeholder="Description" class="inputEdit"/> <br/>
+       <label asp-for="PictureName"></label>
+       <input asp-for="@Model.PictureName" required placeholder="Picture" class="inputEdit"/> <br/>
 
-        <input type="submit" value="Add Animal"/>
+         <form action="/Catalog/Index" method="post" class="CreateForm">
+
+            <fieldset>Category <select id="categoryID" name="categoryID">
+
+            <option value="1">Birds</option>
+
+            <option value="2">Dogs</option>
+
+            <option value="3">Cats</option>
+
+            </select>
+
+            <p><input class="btn btn-outline-success active" role="button" type="submit" value="Add Animal" /> </p>
+
+            </fieldset>
+
+            </form>
+
     }
     
 </body>

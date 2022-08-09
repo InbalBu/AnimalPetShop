@@ -30,11 +30,11 @@
         <td>@Model.Name</td>
         <td>@Model.Description </td>
         <td>@Model.Age</td>
-        <td>@Model.Category</td>
+        <td>@Model.Category!.Name</td>
         <td> @foreach (var comment in Model.Comments!)
         {
-            <div>
-                 @comment.Text
+            <div class="commentSection">
+                 <p>@comment.Text</p>
             </div>
         }
         </td>
@@ -43,7 +43,7 @@
            {
             @Html.TextBox("comment", null, new {animalId=Model.Id})
 
-             <input type="submit" value="Add Comment"/>
+             <input class="btn btn-outline-success active mt-lg-3" type="submit" value="Add Comment"/>
              }
         </td>
       </tr>
