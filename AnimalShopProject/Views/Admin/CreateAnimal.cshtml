@@ -17,14 +17,21 @@
 
          @using(Html.BeginForm("Create", "Admin", FormMethod.Post))
     {
-       <label asp-for="Name"></label>
-       <input asp-for="@Model.Name" required placeholder="Animal Name" class="inputEdit"/> <br/>
-       <label asp-for="Age"></label>
-       <input asp-for="@Model.Age" required placeholder="Age" class="inputEdit"/> <br/>
-       <label asp-for="Description"></label>
-       <input asp-for="@Model.Description" required placeholder="Description" class="inputEdit"/> <br/>
-       <label asp-for="PictureName"></label>
-       <input asp-for="@Model.PictureName" required placeholder="Picture" class="inputEdit"/> <br/>
+           <label asp-for="Name"></label>
+           <span asp-validation-for="Name"></span>
+           <input asp-for="@Model.Name" required placeholder="Animal Name" class="inputEdit"/> <br/>
+
+           <label asp-for="Age"></label>
+           <span asp-validation-for="Age"></span>
+           <input asp-for="@Model.Age" required placeholder="Age" class="inputEdit"/> <br/>
+
+           <label asp-for="Description"></label>
+           <span asp-validation-for="Description"></span>
+           <input asp-for="@Model.Description" required placeholder="Description" class="inputEdit"/> <br/>
+
+           <label asp-for="PictureName"></label>
+           <span asp-validation-for="PictureName"></span>
+           <input asp-for="@Model.PictureName" required placeholder="Picture" class="inputEdit"/> <br/>
 
          <form action="/Catalog/Index" method="post" class="CreateForm">
 
@@ -38,12 +45,11 @@
 
             </select>
 
-            <p><input class="btn btn-outline-success active" role="button" type="submit" value="Add Animal" /> </p>
+            <p class="addAnimalBtn"><input class="btn btn-outline-success active" role="button" type="submit" value="Add Animal" /> </p>
 
             </fieldset>
 
             </form>
-
     }
     
 </body>

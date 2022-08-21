@@ -63,3 +63,22 @@ label {
 .CreateForm {
     margin-bottom: 30px;
 }
+
+.addAnimalBtn p {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.form-control {
+    width: 200px;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-left: 535px;
+}
+
+.validation_user {
+    color: black !important;
+    padding: 15px !important;
+}

@@ -9,12 +9,12 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 app.UseStaticFiles();
-using (var scope = app.Services.CreateScope())
-{
-    var ctx = scope.ServiceProvider.GetRequiredService<AnimalContext>();
-    ctx.Database.EnsureDeleted();
-    ctx.Database.EnsureCreated();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var ctx = scope.ServiceProvider.GetRequiredService<AnimalContext>();
+//    ctx.Database.EnsureDeleted();
+//    ctx.Database.EnsureCreated();
+//}
 
 app.UseRouting();
 

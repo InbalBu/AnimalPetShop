@@ -1,0 +1,70 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model IEnumerable<AnimalShopProject.Models.Animal>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/homepage.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+     <h1 class="header">The Best Pet Shop In Town!</h1>
+     <p class="new">Create new Animal:</p>
+
+          <a class="btn btn-outline-success active justify-content-center text-center" role="button" asp-action="CreateForm" asp-controller="Admin">Create</a>
+
+            <form action="/Admin/Index" method="post">
+
+            <fieldset>Category <select id="Category" name="Category">
+
+            <option value="">All categories</option>
+
+            <option value="Birds">Birds</option>
+
+            <option value="Dogs">Dogs</option>
+
+            <option value="Cats">Cats</option>
+
+            </select>
+
+            <p><input type="submit" value="Submit" /> </p>
+
+            </fieldset>
+
+            </form>
+       
+
+    @foreach (var animal in Model)
+    {
+      <table class="table table-bordered table-responsive">
+      <tr>
+        <th>Portrait</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td> <img class="images" src=" @animal.PictureName"/></td>
+        <td>@animal.Name</td>
+        <td>@animal.Age</td>
+        <td>@animal.Description</td>
+         <td><a class="btn btn-outline-success active" role="button" asp-action="Edit" asp-route-id="@animal.Id" asp-controller="Admin">Edit</a></td>
+         <td><a class="btn btn-outline-success active" role="button" asp-action="Delete" asp-route-id="@animal.Id" asp-controller="Admin">Delete</a></td>
+      </tr>
+
+    </table> 
+        
+    }
+
+
+ 
+    
+</body>
+</html>
+

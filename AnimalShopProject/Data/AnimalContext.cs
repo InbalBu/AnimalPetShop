@@ -11,12 +11,13 @@ namespace AnimalShopProject.Data
         public virtual DbSet<Animal>? Animals { get; set; }
         public virtual DbSet<Category>? Categories { get; set; }
         public virtual DbSet<Comment>? Comments { get; set; }
+        public virtual DbSet<User>? Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var sources = new string[]
             {
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cyanocitta_cristata_blue_jay.jpg/330px-Cyanocitta_cristata_blue_jay.jpg",
-                "https://youriste.com/wp-content/uploads/2021/03/golden-retriever.jpeg",
+                "https://sgressentials.com/wp-content/uploads/2021/06/picture-of-golden-retriever-dog_0.jpg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ragdoll_from_Gatil_Ragbelas.jpg/330px-Ragdoll_from_Gatil_Ragbelas.jpg",
                 "https://www.animalfunfacts.net/images/stories/pets/birds/pacific_parrotlet_l.jpg",
                 "https://www.animalfunfacts.net/images/stories/pets/birds/canary_bird_l.jpg",
@@ -78,8 +79,11 @@ namespace AnimalShopProject.Data
 
                new { Id = 20, AnimalId = 10, Text = "British Shorthairs can weigh more than the average cat. " },
                new { Id = 21, AnimalId = 10, Text = "British Shorthairs are known as one of the oldest cat breeds in the world." },
-               new { Id = 22, AnimalId = 10, Text = "many people have noted that these cats do not feel fluffy, but instead feel plush." }
+               new { Id = 22, AnimalId = 10, Text = "many people have noted that these cats do not feel fluffy, but instead feel plush." },
+               new { Id = 23, AnimalId = 10, Text = "A daily brushing is important, especially during seasonal changes." },
+               new { Id = 24, AnimalId = 10, Text = "The British is a fiercely loyal, loving cat and will attach herself to every one of her family members. " }
                 );
+
         }
     }
 }

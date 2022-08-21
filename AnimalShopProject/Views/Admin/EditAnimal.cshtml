@@ -19,19 +19,21 @@
     {
       
         <label asp-for="Name"></label>
+        <span asp-validation-for="Name"></span>
        <input asp-for="@Model.Name" required placeholder="Animal Name" class="inputEdit"/> <br/>
        <label asp-for="Age"></label>
+       <span asp-validation-for="Age"></span>
        <input asp-for="@Model.Age" required placeholder="Age" class="inputEdit"/> <br/>
        <label asp-for="Description"></label>
+       <span asp-validation-for="Description"></span>
        <input asp-for="@Model.Description" required placeholder="Description" class="inputEdit" width="300"/> <br/>
        <label asp-for="PictureName"></label>
+       <span asp-validation-for="PictureName"></span>
        <input asp-for="@Model.PictureName" required placeholder="Picture" class="inputEdit"/> <br/>
 
          <form action="/Catalog/AnimalCard" method="post">
 
             <fieldset>Category <select id="categoryID" name="categoryID">
-
-            <option value="">All categories</option>
 
             <option value="1">Birds</option>
 

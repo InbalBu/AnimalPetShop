@@ -1,0 +1,32 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model AnimalShopProject.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/homepage.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+        <h1 class="header">The Best Pet Shop in Town!</h1>
+         <p class="p">Please login to Admin Panel</p>
+
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        <div asp-validation-summary="All">
+          <label for="username">Username:</label><br>
+          @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Username", @required = true })
+          <label for="password">Password:</label><br>
+          @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", @required = true })
+          </div>
+          <input class="btn btn-outline-success active" role="button" type="submit" value="Login"/>
+    }
+
+</body>
+</html>
+
+
